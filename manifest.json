@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "FocusFlow",
+  "version": "1.0.0",
+  "description": "A visual countdown timer displayed as a bar across your browser.",
+  "icons": {
+  },
+  "action":{
+    "default_icon": {
+    },
+    "default_title":"Start a timer!",
+    "default_popup":"popup.html"
+    }
+}
