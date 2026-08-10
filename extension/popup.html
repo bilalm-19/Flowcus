@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flowcus</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <h1>FocusFlow</h1>
+    <div class="dot" id="statusDot"></div>
+  </div>
+
+  <!-- Time Input -->
+  <div class="section">
+    <div class="section-label">Set Timer</div>
+    <div class="time-inputs">
+      <div class="time-field">
+        <input type="number" id="hrs" min="0" max="99" value="0" placeholder="0">
+        <span>hrs</span>
+      </div>
+      <div class="time-sep">:</div>
+      <div class="time-field">
+        <input type="number" id="mins" min="0" max="99" value="0" placeholder="0">
+        <span>min</span>
+      </div>
+      <div class="time-sep">:</div>
+      <div class="time-field">
+        <input type="number" id="secs" min="0" max="99" value="0" placeholder="0">
+        <span>sec</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Presets -->
+  <div class="section">
+    <div class="presets">
+      <button class="preset-btn" data-time="15:00">15m</button>
+      <button class="preset-btn" data-time="25:00">25m</button>
+      <button class="preset-btn" data-time="45:00">45m</button>
+      <button class="preset-btn" data-time="60:00">1h</button>
+    </div>
+  </div>
+
+  <!-- Task Input -->
+  <div class="section">
+    <div class="section-label">Task <span style="color:#4a4a5e; text-transform:none; letter-spacing:0;">(optional)</span></div>
+    <input type="text" class="task-input" id="taskInput" placeholder="What are you working on?" maxlength="80">
+  </div>
+
+  <!-- Display Toggles -->
+  <div class="section">
+    <div class="toggles">
+      <div class="toggle-row">
+        <span class="toggle-label">Show time on bar</span>
+        <label class="toggle">
+          <input type="checkbox" id="showTime" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">Show task on bar</span>
+        <label class="toggle">
+          <input type="checkbox" id="showTask" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <div class="section">
+    <div class="controls">
+      <button class="btn btn-start" id="startBtn">Start</button>
+      <button class="btn btn-reset" id="resetBtn" title="Reset">↺</button>
+    </div>
+  </div>
+
+  <!-- Bar Preview -->
+  <div class="section">
+    <div class="preview">
+      <div class="preview-label">Bar Preview</div>
+      <div class="preview-bar-track">
+        <div class="preview-bar-fill" id="previewFill"></div>
+      </div>
+      <div class="preview-info">
+        <span id="previewTask" class="task"></span>
+        <span id="previewTime" class="time">00:00</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
