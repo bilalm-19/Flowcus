@@ -5,10 +5,29 @@
   "description": "A visual countdown timer displayed as a bar across your browser.",
   "icons": {
   },
-  "action":{
+  "action": {
     "default_icon": {
     },
-    "default_title":"Start a timer!",
-    "default_popup":"popup.html"
+    "default_title": "Start a timer!",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "storage",
+    "alarms",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
     }
+  ]
 }

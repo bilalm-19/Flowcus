@@ -1,0 +1,70 @@
+/* ── FocusFlow Bar ── */
+/* Injected at the top of every page */
+
+#focusflow-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 28px;
+  background: #0f0f14;
+  display: flex;
+  align-items: center;
+  z-index: 2147483647; /* highest possible — sits above everything */
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  transition: opacity 0.3s;
+  padding: 0 12px;
+  gap: 10px;
+}
+
+/* Hidden state — fully removed from view */
+#focusflow-bar.hidden {
+  display: none;
+}
+
+/* ── Progress Track ── */
+#focusflow-bar .ff-track {
+  flex: 1;
+  height: 6px;
+  background: #2a2a3a;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+#focusflow-bar .ff-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #7c6af5, #56b4f9);
+  border-radius: 6px;
+  transition: width 0.4s ease;
+}
+
+/* Done state — green gradient */
+#focusflow-bar .ff-fill.done {
+  background: linear-gradient(90deg, #56f9a2, #7c6af5);
+}
+
+/* ── Text Labels ── */
+#focusflow-bar .ff-task {
+  font-size: 11px;
+  color: #a0a0b8;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#focusflow-bar .ff-time {
+  font-size: 12px;
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+  color: #e2e2e8;
+  min-width: 50px;
+  text-align: right;
+}
+
+/* ── Push page content down so the bar doesn't overlap it ── */
+html.focusflow-active {
+  margin-top: 28px !important;
+}
